@@ -1,13 +1,20 @@
 import { Outlet } from "react-router-dom";
 import MainHeader from "../static/MainHeader";
-import Footer from "../static/Footer";
+import Sider from "../static/Sider";
+// import Footer from "../static/Footer";
 
 const MainLayout = () => {
   return (
-    <div>
+    <div className="w-full h-auto flex-col">
       <MainHeader />
-      <Outlet />
-      <Footer />
+      <div className="flex w-full h-auto">
+        <div className="w-[70px] max-sm:hidden ">
+          <Sider />
+        </div>
+        <div className="w-full h-auto 0">
+          <Outlet />
+        </div>
+      </div>
     </div>
   );
 };

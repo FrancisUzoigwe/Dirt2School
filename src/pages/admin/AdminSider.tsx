@@ -16,17 +16,18 @@ const AdminSider = () => {
   const onToggle = () => {
     setState(!state);
   };
+
   return (
     <>
-      <div className="w-[100px] h-screen">
-        <div className={`${toggle ? "w-[50px]" : "w-[100px]"} h-screen fixed`}>
+      <div className="w-[100px] h-screen bg-white">
+        <div className={`${toggle ? "w-[50px]" : "w-[85px]"} h-screen fixed`}>
           <div
             className="w-full flex flex-col items-center mt-3"
             onClick={() => {
               onToggle();
             }}
           >
-            {state ? (
+            {!state ? (
               <MdAdminPanelSettings
                 className="text-4xl hover:cursor-pointer"
                 onClick={() => {
@@ -43,7 +44,7 @@ const AdminSider = () => {
             )}
           </div>
           <div className="w-full flex flex-col items-center">
-            <Link to="/admin/view">
+            <Link to="/admin">
               {!toggle ? (
                 <div className="font-bold mt-8 max-sm:text-[13px]">View </div>
               ) : (
@@ -59,15 +60,17 @@ const AdminSider = () => {
             </Link>
             <Link to="/admin/history">
               {!toggle ? (
-                <div className="font-bold mt-8 max-sm:text-[13px]"> History</div>
+                <div className="font-bold mt-8 max-sm:text-[13px]">
+                  History
+                </div>
               ) : (
                 <MdOutlineManageHistory className="text-3xl mt-9" />
               )}
             </Link>
           </div>
           <div className="flex flex-col items-center">
-            <div className="absolute bottom-4 font-black hover:cursor-pointer hover:px-4 hover:py-2 hover:rounded-full hover:bg-black hover:text-white transition-all duration-300">
-              {!toggle ? "LogOut" : <TbLogout2 className="text-3xl" />}
+            <div className="absolute bottom-4 font-black hover:cursor-pointer hover:px-3 hover:py-2 hover:rounded-full hover:bg-black hover:text-white transition-all duration-300">
+              {!toggle ? "LogOut" : <TbLogout2 className="text-2xl" />}
             </div>
           </div>
         </div>

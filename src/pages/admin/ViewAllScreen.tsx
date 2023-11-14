@@ -1,37 +1,34 @@
-import vite from "../../assets/react.svg";
-import { useSelector } from "react-redux";
-const ViewAllScreen = () => {
-  const toggle = useSelector((state: any) => state.toggle);
-
+import image from "../../assets/bottle.jpg"
+const Component = () => {
   return (
-    <>
-      <div className="w-full h-auto flex-wrap">
-        <div className="my-2 mx-2 flex-wrap">
-          <div
-            className={` ${
-              toggle ? "w-[250px]" : "w-[200px]"
-            } h-[180px] border mx-2 rounded-xl flex items-center justify-evenly`}
-          >
-            <div className="flex flex-col items-center">
-              <div className="w-[80px] max-sm:w-[50px] max-sm:h-[50px] h-[80px] rounded-full border">
-                <img
-                  src={vite}
-                  alt="Profile"
-                  className="w-full h-full object-cover rounded-full"
-                />
-              </div>
-              <div className="text-[15px] font-bold mt-1 max-sm:text-[12px]">
-                Kossyrisochukwu
-              </div>
-              <div className="text-[12px] max-sm:text-[10px]">
-                kossyuzoigwe@gmail.com
-              </div>
-              <div className="text-red-500 font-bold">₦2,000</div>
-            </div>
-          </div>
+    <div className="flex items-center justify-center">
+      <div className="flex h-[180px] border w-[99%] flex-col items-center justify-center rounded-lg bg-green-500">
+        <div className="w-[80px] h-[80px] rounded-full border ">
+          <img src={image} alt="Image" className="object-cover w-full h-full rounded-full"/>
         </div>
+        <div className="font-bold text-white max-sm:text-[13px]">KossyUzoigwe</div>
+        <div className="text-[12px] font-bold max-sm:text-[10px]">kossyuzoigwe@gmail.com</div>
+        <div className="font-bold text-white">₦2,000</div>
       </div>
-    </>
+    </div>
+  );
+};
+
+const ViewAllScreen = () => {
+  return (
+    <div className="grid grid-cols-3 gap-2 xl:grid-cols-4  max-md:grid-cols-3 max-sm:grid-cols-2">
+      <Component />
+      <Component />
+      <Component />
+      <Component />
+      <Component />
+      <Component />
+      <Component />
+      <Component />
+      <Component />
+      <Component />
+      <Component />
+    </div>
   );
 };
 

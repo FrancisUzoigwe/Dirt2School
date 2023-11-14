@@ -25,14 +25,25 @@ export const signinApi = async (data: any) => {
   }
 };
 
+export const verifyApi = async (token: any) => {
+  try {
+    return await axios
+      .patch(`${URL}/${token}/student-secret-key`)
+      .then((res:any) => {
+        console.log( "showing res: ",res)
+        return res.data.data;
+      });
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-export const verifyApi = async (token: string) => {
-    try {
-        return await axios.patch(`${URL}/:${token}/student-secret-key`).then((res) => {
-            return res.data?.data
-        })
-    } catch (error) {
-        console.log(error);
-        
-    }
-}
+export const verifiedApi = async (token: string) => {
+  try {
+    return await axios.get(`${URL}/${token}/verify-user`).then((res:any) => {
+      return res.data?.data;
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};

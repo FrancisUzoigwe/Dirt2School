@@ -6,7 +6,6 @@ import HomeScreen from "../pages/screen/HomeScreen";
 import RegisterScreen from "../pages/auth/RegisterScreen";
 import SigninScreen from "../pages/auth/SigninScreen";
 import AdminLayout from "../pages/admin/AdminLayout";
-import AdminScreen from "../pages/admin/AdminScreen";
 import ViewAllScreen from "../pages/admin/ViewAllScreen";
 import CreditScreen from "../pages/admin/CreditScreen";
 import AdminHistoryScreen from "../pages/admin/AdminHistoryScreen";
@@ -14,6 +13,7 @@ import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
 import EmailScreen from "../pages/auth/EmailScreen";
 import VerifiedScreen from "../pages/auth/VerifiedScreen";
+// import OtpScreen from "../pages/auth/OtpScreen";
 
 export const mainRouter = createBrowserRouter([
   {
@@ -35,7 +35,7 @@ export const mainRouter = createBrowserRouter([
     element: <SigninScreen />,
   },
   {
-    path: "/api/:token/student-secret-key",
+    path: "/:token/verify-user",
     element: <SigninScreen />,
   },
   {
@@ -49,17 +49,13 @@ export const mainRouter = createBrowserRouter([
   {
     path: "/admin",
     element: (
-      <AdminRoute>
-        <AdminLayout />
-      </AdminRoute>
+      // <AdminRoute>
+      <AdminLayout />
+      // </AdminRoute>
     ),
     children: [
       {
         index: true,
-        element: <AdminScreen />,
-      },
-      {
-        path: "/admin/view",
         element: <ViewAllScreen />,
       },
       {
@@ -75,9 +71,9 @@ export const mainRouter = createBrowserRouter([
   {
     path: "/auth",
     element: (
-      <PrivateRoute>
-        <MainLayout />
-      </PrivateRoute>
+      // <PrivateRoute>
+      <MainLayout />
+      // </PrivateRoute>
     ),
     children: [
       {
