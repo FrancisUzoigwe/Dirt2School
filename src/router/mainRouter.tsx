@@ -13,6 +13,8 @@ import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
 import EmailScreen from "../pages/auth/EmailScreen";
 import VerifiedScreen from "../pages/auth/VerifiedScreen";
+import ProfileScreen from "../pages/screen/ProfileScreen";
+import HubScreen from "../pages/screen/HubScreen";
 // import OtpScreen from "../pages/auth/OtpScreen";
 
 export const mainRouter = createBrowserRouter([
@@ -79,6 +81,14 @@ export const mainRouter = createBrowserRouter([
       {
         index: true,
         element: <HomeScreen />,
+      },
+      {
+        path: "/auth/hub",
+        element: <HubScreen />,
+      },
+      {
+        path: "/auth/profile",
+        element: <ProfileScreen />,
       },
     ],
   },
