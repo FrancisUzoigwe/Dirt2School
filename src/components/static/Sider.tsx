@@ -9,7 +9,7 @@ const Sider = () => {
           <div className="mt-3">
             <FaUser className="text-2xl hover:scale-[1.2] duration-300 transition-all hover:cursor-pointer" />
           </div>
-          <Link to="/auth/hub">
+          <Link to="/auth">
             <div className="mt-8 font-bold">Hub</div>
           </Link>
           <Link to="/auth/profile">
