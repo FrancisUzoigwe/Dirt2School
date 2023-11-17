@@ -8,7 +8,7 @@ const MainLayout = () => {
     <div className="w-full h-auto flex-col">
       <MainHeader />
       <div className="flex w-full h-auto">
-        <div className="w-[70px] max-sm:hidden ">
+        <div className="w-[80px] max-sm:hidden mr-2 ">
           <Sider />
         </div>
         <div className="w-full h-auto 0">

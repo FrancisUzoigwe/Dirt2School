@@ -3,7 +3,6 @@ import AdminSider from "./AdminSider";
 import { useSelector } from "react-redux";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useState } from "react";
-import { useAutoAnimate } from "@formkit/auto-animate/react";
 
 const AdminLayout = () => {
   const toggle = useSelector((state: any) => state.toggle);

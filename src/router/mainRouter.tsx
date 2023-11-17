@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import FirstLayout from "../components/common/FirstLayout";
 import LandingScreen from "../pages/auth/LandingScreen";
 import MainLayout from "../components/common/MainLayout";
-import HomeScreen from "../pages/screen/HomeScreen";
 import RegisterScreen from "../pages/auth/RegisterScreen";
 import SigninScreen from "../pages/auth/SigninScreen";
 import AdminLayout from "../pages/admin/AdminLayout";
@@ -13,6 +12,8 @@ import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
 import EmailScreen from "../pages/auth/EmailScreen";
 import VerifiedScreen from "../pages/auth/VerifiedScreen";
+import ProfileScreen from "../pages/screen/ProfileScreen";
+import HubScreen from "../pages/screen/HubScreen";
 // import OtpScreen from "../pages/auth/OtpScreen";
 
 export const mainRouter = createBrowserRouter([
@@ -78,7 +79,11 @@ export const mainRouter = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <HomeScreen />,
+        element: <HubScreen />,
+      },
+      {
+        path: "/auth/profile",
+        element: <ProfileScreen />,
       },
     ],
   },
