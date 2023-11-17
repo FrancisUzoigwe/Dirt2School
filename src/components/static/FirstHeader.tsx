@@ -1,50 +1,184 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll/modules";
+import { NavLink } from "react-router-dom";
+import Menue from "./Menue";
 
-const FirstHeader = () => {
-  const [scroll, setScroll] = useState<boolean>(false);
-  const onScroll = () => {
-    setScroll(!scroll);
+const Header = () => {
+  const [show, setShow] = useState<boolean>(false);
 
-    if (window.scrollY > 20) {
-      setScroll(true);
+  const onShow = () => {
+    if (window.scrollY >= 140) {
+      setShow(true);
     } else {
-      setScroll(false);
+      setShow(false);
     }
   };
-  window.addEventListener("scroll", onScroll);
+
+  window.addEventListener("scroll", onShow);
 
   return (
-    <>
-      {!scroll ? (
-        <div className="w-full h-[60px] justify-center items-center flex">
-          <div className="w-[95%] h-full justify-between items-center flex fixed">
-            <div className="max-sm:text-[10px] max-sm:font-bold">
-              Dirt2School
+    <div>
+      {show ? (
+        <div className="w-full h-[70px] fixed flex items-center justify-center z-20  text-black bg-white">
+          <div className="w-[90%] h-[100%] flex items-center justify-center z-20 ">
+            <div className="flex w-[100%] h-[100%] justify-between items-center">
+              <div className="">Waste</div>
+
+              <div className="flex gap-10 medium:gap-6 md:text-[14px] sm:text-[14px] text-[16px] small:hidden">
+              <Link to="home"
+                //  activeClass="active"
+                 smooth={true}
+                 offset={200}
+                 duration={500}
+                >
+                  <nav className="hover:cursor-pointer">Home</nav>
+                </Link>
+                <Link to="aboutus"
+                //  activeClass="active"
+                 smooth={true}
+                 offset={400}
+                 duration={500}
+                >
+                  <nav className="hover:cursor-pointer">About Us</nav>
+                </Link>
+                <Link to="services"
+                //  activeClass="active"
+                 smooth={true}
+                 offset={200}
+                 duration={500}
+                >
+                  <nav className="hover:cursor-pointer">Services</nav>
+                </Link>
+                <Link to="company"
+                  // activeClass="active"
+                  smooth={true}
+                  offset={200}
+                  duration={500}
+                >
+                  <nav className="hover:cursor-pointer">Company</nav>
+                </Link>
+                <Link
+                  to="blog"
+                  // activeClass="active"
+                  smooth={true}
+                  offset={200}
+                  duration={500}
+                >
+                  <nav className="hover:cursor-pointer">Blog</nav>
+                </Link>
+                <Link
+                  to="contact"
+                  //  activeClass="active"
+                  smooth={true}
+                  offset={200}
+                  duration={500}
+                >
+                  <nav className="hover:cursor-pointer">Contact</nav>
+                </Link>
+              </div>
+              <NavLink to="register">
+                <button
+                  className="w-[120px] rounded-[3px] relative flex justify-center items-center gap-1 hover:text-[black)] hover:before:translate-x-[105%]
+                overflow-hidden before:transition-transform
+                before:duration-[1s] ease-in-out text-white before:bg-lime-500 before:absolute
+                before:top-0 before:left-0 before:w-full before:h-full
+                transition-colors duration-[1s] before:z-[-1] z-[1]
+                hover:text-black border-[1px]
+                border-[] bg-[whitesmoke]
+                px-2 h-10 text-[13px] font-medium small:hidden"
+                >
+                  Get Started
+                </button>
+              </NavLink>
+
+              <div className="hidden  mt-[220px] small:block">
+                <Menue />
+              </div>
             </div>
-            <Link to="/signin">
-              <button className="px-4 py-2 rounded-full bg-green-700 text-white max-sm:text-[10px] max-sm:font-bold">
-                Get Involved
-              </button>
-            </Link>
           </div>
         </div>
       ) : (
-        <div className="w-full h-[60px] justify-center items-center flex">
-          <div className="w-[95%] h-full justify-between items-center flex fixed z-50">
-            <div className="max-sm:text-[10px] max-sm:font-bold">
-              Dirt2School
+        <div className="w-full h-[70px] fixed flex items-center justify-center z-20  text-black">
+          <div className="w-[90%] h-[100%] flex items-center justify-center z-20 ">
+            <div className="flex w-[100%] h-[100%] justify-between items-center">
+              <div className="text-white">Waste</div>
+
+              <div className="flex gap-10 medium:gap-6 md:text-[14px] sm:text-[14px] text-[16px] small:hidden text-white">
+                <Link to="home"
+                //  activeClass="active"
+                 smooth={true}
+                 offset={50}
+                 duration={500}
+                >
+                  <nav className="hover:cursor-pointer">Home</nav>
+                </Link>
+                <Link to="aboutus"
+                //  activeClass="active"
+                 smooth={true}
+                 offset={300}
+                 duration={500}
+                >
+                  <nav className="hover:cursor-pointer">About Us</nav>
+                </Link>
+                <Link to="services"
+                //  activeClass="active"
+                 smooth={true}
+                 offset={50}
+                 duration={500}
+                >
+                  <nav className="hover:cursor-pointer">Services</nav>
+                </Link>
+                <Link to="company"
+                  // activeClass="active"
+                  smooth={true}
+                  offset={100}
+                  duration={500}
+                >
+                  <nav className="hover:cursor-pointer">Company</nav>
+                </Link>
+                <Link
+                  to="blog"
+                  // activeClass="active"
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                >
+                  <nav className="hover:cursor-pointer">Blog</nav>
+                </Link>
+                <Link
+                  to="contact"
+                  //  activeClass="active"
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                >
+                  <nav className="hover:cursor-pointer">Contact</nav>
+                </Link>
+              </div>
+              <NavLink to="register">
+                <button
+                  className="w-[120px] rounded-[3px] relative flex justify-center items-center gap-1 hover:text-[black)] hover:before:translate-x-[105%]
+        overflow-hidden before:transition-transform
+        before:duration-[1s] ease-in-out text-black before:bg-[whitesmoke] before:absolute
+        before:top-0 before:left-0 before:w-full before:h-full
+        transition-colors duration-[1s] before:z-[-1] z-[1]
+        hover:text-white border-[1px]
+        border-[] bg-lime-500
+        px-2 h-10 text-[13px] font-medium small:hidden"
+                >
+                  Get Started
+                </button>
+              </NavLink>
+
+              <div className="hidden  mt-[220px] small:block">
+                <Menue />
+              </div>
             </div>
-            <Link to="/signin">
-              <button className="px-4 py-2 rounded-full bg-green-700 text-white max-sm:text-[10px] max-sm:font-bold">
-                Get Involved
-              </button>
-            </Link>
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
-
-export default FirstHeader;
+// ml-[128px]
+export default Header;
