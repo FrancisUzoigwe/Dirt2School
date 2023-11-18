@@ -6,11 +6,7 @@ export default {
   ],
   theme: {
     extend: {
-      screens: {
-        big: { max: "1440px" },
-        medium: { max: "780px" },
-        small: { max: "430px" },
-      },
+     
     },
   },
   plugins: [],

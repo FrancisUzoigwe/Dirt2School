@@ -26,7 +26,7 @@ const Footer = () => {
           </div>
           <div className="flex items-center text-[22px] medium:mb-2 small:mb-2 hover:cursor-pointer hover:scale-[1.02] hover:text-[#e2e0e0] transition-all duration-300">
             <CiMail/>
-            <p className="ml-2 text-[13px]  medium:text-[11px] ">dirth2sch@gmail.com</p>
+            <p className="ml-2 text-[13px]  medium:text-[11px] ">Dirt2Sch@gmail.com</p>
           </div>
           <div className="flex items-center text-[22px] medium:mb-2 small:mb-2 hover:cursor-pointer hover:scale-[1.02] hover:text-[#e2e0e0] transition-all duration-300">
             <CiLocationOn/>

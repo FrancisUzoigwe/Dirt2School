@@ -7,7 +7,7 @@ const Header = () => {
   const [show, setShow] = useState<boolean>(false);
 
   const onShow = () => {
-    if (window.scrollY >= 140) {
+    if (window.scrollY >= 50) {
       setShow(true);
     } else {
       setShow(false);
@@ -19,44 +19,48 @@ const Header = () => {
   return (
     <div>
       {show ? (
-        <div className="w-full h-[70px] fixed flex items-center justify-center z-20  text-black bg-white">
+        <div className="w-full h-[70px] fixed flex items-center transition-all duration-300 justify-center z-20  text-black bg-white">
           <div className="w-[90%] h-[100%] flex items-center justify-center z-20 ">
             <div className="flex w-[100%] h-[100%] justify-between items-center">
               <div className="">Waste</div>
 
-              <div className="flex gap-10 medium:gap-6 md:text-[14px] sm:text-[14px] text-[16px] small:hidden">
-              <Link to="home"
-                //  activeClass="active"
-                 smooth={true}
-                 offset={200}
-                 duration={500}
+              <div className="flex gap-10 max-md:gap-7 md:text-[14px] sm:text-[14px] text-[16px] max-sm:hidden">
+                <Link
+                  to="home"
+                  //  activeClass="active"
+                  smooth={true}
+                  offset={200}
+                  duration={500}
                 >
                   <nav className="hover:cursor-pointer">Home</nav>
                 </Link>
-                <Link to="aboutus"
-                //  activeClass="active"
-                 smooth={true}
-                 offset={400}
-                 duration={500}
+                <Link
+                  to="aboutus"
+                  //  activeClass="active"
+                  smooth={true}
+                  offset={400}
+                  duration={500}
                 >
                   <nav className="hover:cursor-pointer">About Us</nav>
                 </Link>
-                <Link to="services"
-                //  activeClass="active"
-                 smooth={true}
-                 offset={200}
-                 duration={500}
+                <Link
+                  to="services"
+                  //  activeClass="active"
+                  smooth={true}
+                  offset={200}
+                  duration={500}
                 >
                   <nav className="hover:cursor-pointer">Services</nav>
                 </Link>
-                <Link to="company"
+                {/* <Link
+                  to="company"
                   // activeClass="active"
                   smooth={true}
                   offset={200}
                   duration={500}
                 >
                   <nav className="hover:cursor-pointer">Company</nav>
-                </Link>
+                </Link> */}
                 <Link
                   to="blog"
                   // activeClass="active"
@@ -79,68 +83,73 @@ const Header = () => {
               <NavLink to="register">
                 <button
                   className="w-[120px] rounded-[3px] relative flex justify-center items-center gap-1 hover:text-[black)] hover:before:translate-x-[105%]
-                overflow-hidden before:transition-transform
-                before:duration-[1s] ease-in-out text-white before:bg-lime-500 before:absolute
-                before:top-0 before:left-0 before:w-full before:h-full
-                transition-colors duration-[1s] before:z-[-1] z-[1]
-                hover:text-black border-[1px]
-                border-[] bg-[whitesmoke]
-                px-2 h-10 text-[13px] font-medium small:hidden"
+            overflow-hidden before:transition-transform
+            before:duration-[1s] ease-in-out text-white before:bg-lime-500 before:absolute
+            before:top-0 before:left-0 before:w-full before:h-full
+            transition-colors duration-[1s] before:z-[-1] z-[1]
+            hover:text-black border-[1px]
+            border-[] bg-[whitesmoke]
+            px-2 h-10 text-[13px] font-medium max-sm:hidden"
                 >
                   Get Started
                 </button>
               </NavLink>
 
-              <div className="hidden  mt-[220px] small:block">
+              <div className="hidden  mt-[220px] max-sm:block">
                 <Menue />
               </div>
             </div>
           </div>
         </div>
       ) : (
-        <div className="w-full h-[70px] fixed flex items-center justify-center z-20  text-black">
+        <div className="w-full h-[70px] fixed flex items-center transition-all duration-300 justify-center z-20 text-white">
           <div className="w-[90%] h-[100%] flex items-center justify-center z-20 ">
             <div className="flex w-[100%] h-[100%] justify-between items-center">
-              <div className="text-white">Waste</div>
+              <div className="">Waste</div>
 
-              <div className="flex gap-10 medium:gap-6 md:text-[14px] sm:text-[14px] text-[16px] small:hidden text-white">
-                <Link to="home"
-                //  activeClass="active"
-                 smooth={true}
-                 offset={50}
-                 duration={500}
+              <div className="flex gap-10 max-md:gap-7 md:text-[14px] sm:text-[14px] text-[16px] max-sm:hidden">
+                <Link
+                  to="home"
+                  //  activeClass="active"
+                  smooth={true}
+                  offset={200}
+                  duration={500}
                 >
                   <nav className="hover:cursor-pointer">Home</nav>
                 </Link>
-                <Link to="aboutus"
-                //  activeClass="active"
-                 smooth={true}
-                 offset={300}
-                 duration={500}
+                <Link
+                  to="aboutus"
+                  //  activeClass="active"
+                  smooth={true}
+                  offset={400}
+                  duration={500}
+      
                 >
                   <nav className="hover:cursor-pointer">About Us</nav>
                 </Link>
-                <Link to="services"
-                //  activeClass="active"
-                 smooth={true}
-                 offset={50}
-                 duration={500}
+                <Link
+                  to="services"
+                  //  activeClass="active"
+                  smooth={true}
+                  offset={200}
+                  duration={500}
                 >
                   <nav className="hover:cursor-pointer">Services</nav>
                 </Link>
-                <Link to="company"
+                {/* <Link
+                  to="company"
                   // activeClass="active"
                   smooth={true}
-                  offset={100}
+                  offset={200}
                   duration={500}
                 >
                   <nav className="hover:cursor-pointer">Company</nav>
-                </Link>
+                </Link> */}
                 <Link
                   to="blog"
                   // activeClass="active"
                   smooth={true}
-                  offset={50}
+                  offset={200}
                   duration={500}
                 >
                   <nav className="hover:cursor-pointer">Blog</nav>
@@ -149,7 +158,7 @@ const Header = () => {
                   to="contact"
                   //  activeClass="active"
                   smooth={true}
-                  offset={50}
+                  offset={200}
                   duration={500}
                 >
                   <nav className="hover:cursor-pointer">Contact</nav>
@@ -158,19 +167,19 @@ const Header = () => {
               <NavLink to="register">
                 <button
                   className="w-[120px] rounded-[3px] relative flex justify-center items-center gap-1 hover:text-[black)] hover:before:translate-x-[105%]
-        overflow-hidden before:transition-transform
-        before:duration-[1s] ease-in-out text-black before:bg-[whitesmoke] before:absolute
-        before:top-0 before:left-0 before:w-full before:h-full
-        transition-colors duration-[1s] before:z-[-1] z-[1]
-        hover:text-white border-[1px]
-        border-[] bg-lime-500
-        px-2 h-10 text-[13px] font-medium small:hidden"
+            overflow-hidden before:transition-transform
+            before:duration-[1s] ease-in-out text-white before:bg-lime-500 before:absolute
+            before:top-0 before:left-0 before:w-full before:h-full
+            transition-colors duration-[1s] before:z-[-1] z-[1]
+            hover:text-black border-[1px]
+            border-[] bg-[whitesmoke]
+            px-2 h-10 text-[13px] font-medium max-sm:hidden"
                 >
                   Get Started
                 </button>
               </NavLink>
 
-              <div className="hidden  mt-[220px] small:block">
+              <div className="hidden  mt-[220px] max-sm:block">
                 <Menue />
               </div>
             </div>

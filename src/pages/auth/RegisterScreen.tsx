@@ -12,7 +12,7 @@ const RegisterScreen = () => {
           </div>
         </div>
         <div className="w-[35%] flex flex-col items-center justify-center">
-          <div className="w-[330px] bg-white h-[430px] rounded-lg flex flex-col items-center">
+          <div className="w-[330px] bg-white h-[330px] rounded-lg flex flex-col items-center">
             <div className="flex w-full justify-between my-2">
               <div className="flex w-full items-center justify-center ">
                 <div className="flex my-1">
