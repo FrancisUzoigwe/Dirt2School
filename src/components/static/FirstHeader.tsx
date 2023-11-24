@@ -32,7 +32,9 @@ const Header = () => {
                   offset={200}
                   duration={500}
                 >
-                  <nav className="hover:cursor-pointer">Home</nav>
+                  <nav className="hover:cursor-pointer hover:underline transition-all duration-500">
+                    Home
+                  </nav>
                 </Link>
                 <Link
                   to="aboutus"
@@ -41,7 +43,9 @@ const Header = () => {
                   offset={400}
                   duration={500}
                 >
-                  <nav className="hover:cursor-pointer">About Us</nav>
+                  <nav className="hover:cursor-pointer hover:underline transition-all duration-500">
+                    About Us
+                  </nav>
                 </Link>
                 <Link
                   to="services"
@@ -50,7 +54,9 @@ const Header = () => {
                   offset={200}
                   duration={500}
                 >
-                  <nav className="hover:cursor-pointer">Services</nav>
+                  <nav className="hover:cursor-pointer hover:underline transition-all duration-500">
+                    Services
+                  </nav>
                 </Link>
                 {/* <Link
                   to="company"
@@ -59,7 +65,7 @@ const Header = () => {
                   offset={200}
                   duration={500}
                 >
-                  <nav className="hover:cursor-pointer">Company</nav>
+                  <nav className="hover:cursor-pointer hover:underline transition-all duration-500">Company</nav>
                 </Link> */}
                 <Link
                   to="blog"
@@ -68,7 +74,9 @@ const Header = () => {
                   offset={200}
                   duration={500}
                 >
-                  <nav className="hover:cursor-pointer">Blog</nav>
+                  <nav className="hover:cursor-pointer hover:underline transition-all duration-500">
+                    Blog
+                  </nav>
                 </Link>
                 <Link
                   to="contact"
@@ -77,7 +85,9 @@ const Header = () => {
                   offset={200}
                   duration={500}
                 >
-                  <nav className="hover:cursor-pointer">Contact</nav>
+                  <nav className="hover:cursor-pointer hover:underline transition-all duration-500">
+                    Contact
+                  </nav>
                 </Link>
               </div>
               <NavLink to="register">
@@ -115,7 +125,9 @@ const Header = () => {
                   offset={200}
                   duration={500}
                 >
-                  <nav className="hover:cursor-pointer">Home</nav>
+                  <nav className="hover:cursor-pointer hover:underline transition-all duration-500">
+                    Home
+                  </nav>
                 </Link>
                 <Link
                   to="aboutus"
@@ -123,9 +135,10 @@ const Header = () => {
                   smooth={true}
                   offset={400}
                   duration={500}
-      
                 >
-                  <nav className="hover:cursor-pointer">About Us</nav>
+                  <nav className="hover:cursor-pointer hover:underline transition-all duration-500">
+                    About Us
+                  </nav>
                 </Link>
                 <Link
                   to="services"
@@ -134,7 +147,9 @@ const Header = () => {
                   offset={200}
                   duration={500}
                 >
-                  <nav className="hover:cursor-pointer">Services</nav>
+                  <nav className="hover:cursor-pointer hover:underline transition-all duration-500">
+                    Services
+                  </nav>
                 </Link>
                 {/* <Link
                   to="company"
@@ -152,7 +167,9 @@ const Header = () => {
                   offset={200}
                   duration={500}
                 >
-                  <nav className="hover:cursor-pointer">Blog</nav>
+                  <nav className="hover:cursor-pointer hover:underline transition-all duration-500">
+                    Blog
+                  </nav>
                 </Link>
                 <Link
                   to="contact"
@@ -161,7 +178,9 @@ const Header = () => {
                   offset={200}
                   duration={500}
                 >
-                  <nav className="hover:cursor-pointer">Contact</nav>
+                  <nav className="hover:cursor-pointer hover:underline transition-all duration-500">
+                    Contact
+                  </nav>
                 </Link>
               </div>
               <NavLink to="register">
