@@ -7,7 +7,7 @@ export const registerUser = async (data: any) => {
     // const config: any = {
     //   "content-type": "multipart/formdata",
     // };
-    return await axios.post(`${URL}/register-student`, data).then((res) => {
+    return await axios.post(`${URL}/register`, data).then((res) => {
       return res.data?.data;
     });
   } catch (error) {
@@ -17,7 +17,7 @@ export const registerUser = async (data: any) => {
 
 export const signinApi = async (data: any) => {
   try {
-    return await axios.post(`${URL}/sign-in-student`, data).then((res) => {
+    return await axios.post(`${URL}/signin`, data).then((res) => {
       return res.data?.data;
     });
   } catch (error) {

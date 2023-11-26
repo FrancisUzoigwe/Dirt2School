@@ -1,8 +1,9 @@
-
 const ProfileScreen = () => {
   return (
-    <div>ProfileScreen</div>
-  )
-}
+    <div className="w-full h-full flex ">
+      <div>ProfileScreen</div>
+    </div>
+  );
+};
 
-export default ProfileScreen
+export default ProfileScreen;

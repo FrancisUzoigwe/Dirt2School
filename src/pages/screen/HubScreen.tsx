@@ -25,11 +25,11 @@ const History = () => {
 
 const Balance = () => {
   const [visible, setVisible] = useState<boolean>(false);
-  const onTick = () => {
+  const onVisible = () => {
     setVisible(!visible);
   };
   return (
-    <div className="h-[200px] max-sm:h-[150px] my-1 rounded-lg border flex flex-col items-center justify-center">
+    <div className="h-[200px] max-sm:h-[150px] my-1 rounded-lg border flex flex-col items-center justify-center relative">
       <div className="font-bold text-[25px] max-sm:text-[18px] flex">
         ₦
         <span className="ml-1">
@@ -38,7 +38,7 @@ const Balance = () => {
       </div>
       <div
         onClick={() => {
-          onTick();
+          onVisible();
         }}
       >
         {!visible ? (
@@ -53,7 +53,7 @@ const Balance = () => {
 
 const HubScreen = () => {
   return (
-    <div className="grid grid-cols-3 gap-2 medium:grid-cols-1 xl:grid-cols-3 mx-1">
+    <div className="grid grid-cols-3 gap-2 xl:grid-cols-3 mx-1 max-sm:grid-cols-2">
       <Balance />
       <Bags />
       <History />

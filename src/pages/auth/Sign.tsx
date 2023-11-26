@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useParams } from "react-router-dom";
 import LoadingScreen from "./LoadingScreen";
-import { signinApi, verifiedApi,  } from "../../apis/authApi";
+import { signinApi, verifiedApi } from "../../apis/authApi";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import { useDispatch } from "react-redux";
@@ -35,20 +35,20 @@ const Sign = () => {
     const { email, password } = data;
     signinApi({ email, password }).then((res) => {
       if (res) {
-        navigate("/auth");
-        const decode: any = jwtDecode(res);
-        dispatch(mainUser(decode.id));
-        console.log("This is : ", decode.id);
+        navigate("/");
+        // const decode: any = jwtDecode(res);
+        dispatch(mainUser(res));
+        // console.log("This is : ", decode.id);
+        setLoading(false);
       }
-      setLoading(false);
     });
   });
 
-  useEffect(() => {
-    if (token) {
-      verifiedApi(token);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (token) {
+  //     verifiedApi(token);
+  //   }
+  // }, []);
   return (
     <>
       <div>

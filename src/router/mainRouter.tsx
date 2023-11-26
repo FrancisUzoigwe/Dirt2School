@@ -18,7 +18,7 @@ import HubScreen from "../pages/screen/HubScreen";
 
 export const mainRouter = createBrowserRouter([
   {
-    path: "/",
+    path: "/auth",
     element: <FirstLayout />,
     children: [
       {
@@ -28,23 +28,23 @@ export const mainRouter = createBrowserRouter([
     ],
   },
   {
-    path: "/register",
+    path: "/auth/register",
     element: <RegisterScreen />,
   },
   {
-    path: "/signin",
+    path: "/auth/signin",
     element: <SigninScreen />,
   },
   {
-    path: "/:token/verify-user",
+    path: "/auth/:token/verify-user",
     element: <SigninScreen />,
   },
   {
-    path: "/email",
+    path: "/auth/email",
     element: <EmailScreen />,
   },
   {
-    path: "/verified",
+    path: "/auth/verified",
     element: <VerifiedScreen />,
   },
   {
@@ -70,11 +70,11 @@ export const mainRouter = createBrowserRouter([
     ],
   },
   {
-    path: "/auth",
+    path: "/",
     element: (
-      // <PrivateRoute>
-      <MainLayout />
-      // </PrivateRoute>
+      <PrivateRoute>
+        <MainLayout />
+      </PrivateRoute>
     ),
     children: [
       {
@@ -82,7 +82,7 @@ export const mainRouter = createBrowserRouter([
         element: <HubScreen />,
       },
       {
-        path: "/auth/profile",
+        path: "/profile",
         element: <ProfileScreen />,
       },
     ],

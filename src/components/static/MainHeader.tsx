@@ -1,7 +1,12 @@
 import { useState } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-
+import { useDispatch } from "react-redux";
+import { logOut } from "../../global/globalState";
+import { useSelector } from "react-redux";
 const MainHeader = () => {
+  const dispatch = useDispatch();
+  const user = useSelector((state: any) => state.user);
+
   const [show, setShow] = useState<boolean>(false);
   const onShow = () => {
     setShow(!show);
@@ -18,72 +23,52 @@ const MainHeader = () => {
   window.addEventListener("scroll", onScroll);
   return (
     <>
-      {scroll ? (
-        <div className="w-full h-[60px] max-sm:h-[45px] flex justify-center items-center bg-green-500 text-black ">
+      <div className="w-full h-[60px] max-sm:h-[50px] flex justify-center items-center bg-green-500 text-black ">
+        <div
+          className="w-full h-full justify-between flex transition-all duration-300 px-7 items-center fixed"
+          // style={{
+          //   width: "100%",
+          //   height: "60px",
+          //   backdropFilter: "blur(4px)",
+          // }}
+        >
+          <div>Dirt2School</div>
           <div
-            className="w-full h-full justify-between flex transition-all duration-300 px-7 items-center fixed"
-            style={{
-              width: "100%",
-              height: "60px",
-              backdropFilter: "blur(4px)",
+            className="flex items-center justify-center relative cursor-pointer"
+            onClick={() => {
+              onShow();
             }}
           >
-            <div>Dirt2School</div>
-            <div
-              className="flex items-center justify-center relative cursor-pointer"
-              onClick={() => {
-                onShow();
-              }}
-            >
-              <div className="mr-2 max-sm:text-[11px] max-sm:mr-1">
-                Kossyrisochukwu
+            <div className="mr-2 max-sm:hidden max-sm:mr-1 font-bold text-white">
+             Francis
+            </div>
+            {!show ? (
+              <div className="">
+                <MdOutlineKeyboardArrowDown className="max-sm:hidden flex transition-all duration-500 text-white " />
               </div>
-              <div>
-                <MdOutlineKeyboardArrowDown />
+            ) : (
+              <div className="">
+                <MdOutlineKeyboardArrowDown className="rotate-180 max-sm:hidden flex transition-all duration-500 text-white" />
               </div>
-              {show ? (
+            )}
+            {show ? (
+              <div className=" flex flex-col items-center absolute mt-14 top-0 bg-gray-300 w-[150px]  rounded-md h-[75px]">
+                <div className="text-black  font-bold my-2 hover:text-gray-500 duration-300 transition-all">
+                  Update Profile
+                </div>
                 <button
-                  className="absolute mt-14 px-4 py-2 bg-black text-white rounded-full text-[13px] hover:cursor-pointer"
+                  className="absolute mt-9 text-black rounded-full w-full hover:text-gray-500 duration-300 transition-all  hover:cursor-pointer font-bold "
                   onClick={() => {
-                    alert("Login out...");
+                    dispatch(logOut());
                   }}
                 >
                   LogOut
                 </button>
-              ) : null}
-            </div>
+              </div>
+            ) : null}
           </div>
         </div>
-      ) : (
-        <div className="w-full h-[50px] max-sm:h-[45px] flex justify-center items-center bg-green-500 text-white ">
-          <div className="w-full px-8 h-full justify-between flex  items-center transition-all duration-300">
-            <div>Dirt2School</div>
-            <div
-              className="flex items-center justify-center relative cursor-pointer"
-              onClick={() => {
-                onShow();
-              }}
-            >
-              <div className="mr-2 max-sm:text-[11px] max-sm:mr-1">
-                Kossyrisochukwu
-              </div>
-              <div>
-                <MdOutlineKeyboardArrowDown />
-              </div>
-              {show ? (
-                <button
-                  className="absolute mt-14 px-4 py-2 bg-black text-white rounded-full text-[13px] hover:cursor-pointer"
-                  onClick={() => {
-                    alert("Login out...");
-                  }}
-                >
-                  LogOut
-                </button>
-              ) : null}
-            </div>
-          </div>
-        </div>
-      )}
+      </div>
     </>
   );
 };

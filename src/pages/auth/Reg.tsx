@@ -40,9 +40,11 @@ const Reg = () => {
     setLoading(true);
     const { email, password } = data;
     registerUser({ email, password }).then((res) => {
-      navigate("/email");
-      setLoading(false);
+      console.log(res);
+      
+      navigate("/auth/email");
     });
+    setLoading(false);
   });
 
   return (
