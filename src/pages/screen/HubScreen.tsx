@@ -16,9 +16,7 @@ const Bags = () => {
 const History = () => {
   return (
     <div className="h-[200px] max-sm:h-[130px] my-1 rounded-lg border flex flex-col items-center justify-center">
-      <div className="text-[16px] font-bold">
-       
-      </div>
+      <div className="text-[16px] font-bold"></div>
     </div>
   );
 };
@@ -53,7 +51,7 @@ const Balance = () => {
 
 const HubScreen = () => {
   return (
-    <div className="grid md:grid-cols-3 gap-2 max-sm:gap-3  sm:grid-cols-2 mx-1 max-sm:grid-cols-1">
+    <div className="grid md:grid-cols-3 gap-2 max-sm:gap-3   sm:grid-cols-2 mx-3 max-sm:grid-cols-1">
       <Balance />
       <Bags />
       <History />
