@@ -117,14 +117,14 @@ const Reg = () => {
                 onEye();
               }}
             >
-              {eye ? <FaEye /> : <FaEyeSlash />}
+              {!eye ? <FaEye /> : <FaEyeSlash />}
             </div>
             <div className="absolute bg-white px-1 text-[13px] max-sm:text-[10px] max-sm:mt-[-8px] font-semibold ml-[15px] mt-[-10px] text-gray-500">
               Enter Password:
             </div>
             <div className="min-w-[290px] h-[40px] border flex justify-center items-center rounded-full overflow-hidden">
               <input
-                type={`${eye ? "password" : "text"}`}
+                type={`${!eye ? "password" : "text"}`}
                 placeholder="JohnDoe123"
                 className="w-full h-full outline-none  pl-5 placeholder:text-[13px] text-[13px]"
                 {...register("password")}

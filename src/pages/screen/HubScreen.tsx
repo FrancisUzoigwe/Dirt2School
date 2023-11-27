@@ -4,7 +4,7 @@ import { IoMdEyeOff } from "react-icons/io";
 
 const Bags = () => {
   return (
-    <div className="h-[200px] max-sm:h-[150px] my-1 rounded-lg border flex flex-col items-center justify-center">
+    <div className="h-[200px] max-sm:h-[130px] my-1 rounded-lg border flex flex-col items-center justify-center">
       <div className="text-[50px] font-bold">0</div>
       <div className="text-[14px] font-bold text-center max-sm:text-[12px]">
         You've brought 0 bags of pet bottles
@@ -15,7 +15,7 @@ const Bags = () => {
 
 const History = () => {
   return (
-    <div className="h-[200px] max-sm:h-[150px] my-1 rounded-lg border flex flex-col items-center justify-center">
+    <div className="h-[200px] max-sm:h-[130px] my-1 rounded-lg border flex flex-col items-center justify-center">
       <div className="text-[16px] font-bold">
        
       </div>
@@ -29,7 +29,7 @@ const Balance = () => {
     setVisible(!visible);
   };
   return (
-    <div className="h-[200px] max-sm:h-[150px] my-1 rounded-lg border flex flex-col items-center justify-center relative">
+    <div className="h-[200px] max-sm:h-[130px] my-1 rounded-lg border flex flex-col items-center justify-center relative">
       <div className="font-bold text-[25px] max-sm:text-[18px] flex">
         ₦
         <span className="ml-1">
@@ -53,7 +53,7 @@ const Balance = () => {
 
 const HubScreen = () => {
   return (
-    <div className="grid grid-cols-3 gap-2 xl:grid-cols-3 mx-1 max-sm:grid-cols-2">
+    <div className="grid md:grid-cols-3 gap-2 max-sm:gap-3  sm:grid-cols-2 mx-1 max-sm:grid-cols-1">
       <Balance />
       <Bags />
       <History />

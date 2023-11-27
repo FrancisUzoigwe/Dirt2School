@@ -3,6 +3,8 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { logOut } from "../../global/globalState";
 import { useSelector } from "react-redux";
+import { LiaSchoolSolid } from "react-icons/lia";
+import { GiHamburgerMenu } from "react-icons/gi";
 const MainHeader = () => {
   const dispatch = useDispatch();
   const user = useSelector((state: any) => state.user);
@@ -32,7 +34,9 @@ const MainHeader = () => {
           //   backdropFilter: "blur(4px)",
           // }}
         >
-          <div>Dirt2School</div>
+          <div className="w-[45px] h-[45px] max-sm:w-[40px] max-sm:h-[40px]  rounded-full border flex items-center justify-center border-white ">
+            <LiaSchoolSolid className="text-4xl text-white max-sm:text[2xl hover:text-gray-100 duration-300 transition-all cursor-pointer" />
+          </div>
           <div
             className="flex items-center justify-center relative cursor-pointer"
             onClick={() => {
@@ -40,7 +44,10 @@ const MainHeader = () => {
             }}
           >
             <div className="mr-2 max-sm:hidden max-sm:mr-1 font-bold text-white">
-             Francis
+              {user.studentName ? user.studentName : user.email}
+            </div>
+            <div className="hidden max-sm:block">
+              <GiHamburgerMenu className="text-2xl hover:cursor-pointer hover:scale-[1.1] transition-all duration-300 text-white"/>
             </div>
             {!show ? (
               <div className="">
@@ -52,7 +59,7 @@ const MainHeader = () => {
               </div>
             )}
             {show ? (
-              <div className=" flex flex-col items-center absolute mt-14 top-0 bg-gray-300 w-[150px]  rounded-md h-[75px]">
+              <div className=" flex flex-col items-center absolute mt-7 top-0 bg-gray-300 w-[150px]  rounded-md h-[75px] right-1">
                 <div className="text-black  font-bold my-2 hover:text-gray-500 duration-300 transition-all">
                   Update Profile
                 </div>
