@@ -38,7 +38,7 @@ const AdminHistoryScreen = () => {
         </div>
       </div> */}
       <div className="flex justify-center items-center w-full ">
-        <div className="flex justify-between items-center w-[95%]">
+        <div className="flex justify-between items-center w-[95%] mt-[14px]">
           <table className="w-full flex justify-between mt-2">
             <table className="max-md:hidden block">
               <th>ID</th>
@@ -51,30 +51,30 @@ const AdminHistoryScreen = () => {
             </table>
             <table className="">
               <th>Date</th>
-              <tr className="text-[14px] ">11th-Nov-2023</tr>
-              <tr className="text-[14px] ">11th-Nov-2023</tr>
+              <tr className="text-[14px] max-sm:text-[10px]">10/11/2023</tr>
+              <tr className="text-[14px] max-sm:text-[10px]">10/11/2023</tr>
             </table>
             <table className="max-md:hidden block">
               <th>Recipient</th>
-              <tr className="text-[15px] ">Kossyrisochukwu</tr>
-              <tr className="text-[15px] ">Kossyrisochukwu</tr>
+              <tr className="text-[14px] max-sm:text-[10px]">Kossyrisochukwu</tr>
+              <tr className="text-[14px] max-sm:text-[10px]">Kossyrisochukwu</tr>
             </table>
             <table>
               <th>Email</th>
-              <tr className="text-[14px] ">kossyuzoigwe@gmail.com</tr>
-              <tr className="text-[14px] ">kossyuzoigwe@gmail.com</tr>
+              <tr className="text-[14px] max-sm:text-[10px]">kossyuzoigwe@gmail.com</tr>
+              <tr className="text-[14px] max-sm:text-[10px]">kossyuzoigwe@gmail.com</tr>
             </table>
             <table className="flex items-center flex-col">
               <th>Bags</th>
-              <tr className="text-[14px] ">2</tr>
-              <tr className="text-[14px] ">2</tr>
+              <tr className="text-[14px] max-sm:text-[10px]">2</tr>
+              <tr className="text-[14px] max-sm:text-[10px]">2</tr>
             </table>
             <table className="flex items-center flex-col">
               <th>Amount</th>
-              <tr className="text-[14px] ">
+              <tr className="text-[14px] max-sm:text-[10px]">
                 <span className="mr-1 ">₦</span>4,000
               </tr>
-              <tr className="text-[14px] ">
+              <tr className="text-[14px] max-sm:text-[10px]">
                 <span className="mr-1 ">₦</span>4,000
               </tr>
             </table>

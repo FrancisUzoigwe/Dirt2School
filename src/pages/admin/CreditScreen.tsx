@@ -1,8 +1,11 @@
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import Swal from "sweetalert2";
+import { useSelector } from "react-redux";
 
 const CreditScreen = () => {
+  const user = useSelector((state: any) => state.user);
   const Schema = yup.object({
     studentName: yup.string().required(),
     amount: yup.number().required(),
@@ -16,8 +19,14 @@ const CreditScreen = () => {
     resolver: yupResolver(Schema),
   });
 
-  const onHandleSubmit = handleSubmit(() => {
+  const onHandleSubmit = handleSubmit(async (res: any) => {
     console.log("first");
+    Swal.fire({
+      text: `${res.studentName}'s account has been successfully credited with the sum of ${res?.amount}`,
+      icon: "success",
+      // timerProgressBar: true
+      timer: 3000
+    });
   });
   return (
     <>

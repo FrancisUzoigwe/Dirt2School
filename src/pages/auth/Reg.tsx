@@ -5,6 +5,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { registerUser } from "../../apis/authApi";
 import LoadingScreen from "./LoadingScreen";
 import { useNavigate } from "react-router-dom";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa6";
 // import { FaCamera } from "react-icons/fa";
 // import vite from "../../assets/react.svg"
 
@@ -17,6 +19,11 @@ const Reg = () => {
   //   setAvatar(file);
   //   setImage(save);
   // };
+
+  const [eye, setEye] = useState<boolean>(false);
+  const onEye = () => {
+    setEye(!eye);
+  };
   const [checked, setChecked] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const navigate = useNavigate();
@@ -41,7 +48,7 @@ const Reg = () => {
     const { email, password } = data;
     registerUser({ email, password }).then((res) => {
       console.log(res);
-      
+
       navigate("/auth/email");
     });
     setLoading(false);
@@ -104,12 +111,20 @@ const Reg = () => {
             )}
           </div>
           <div className="mt-[25px] relative rounded-md ">
+            <div
+              className="absolute top-[30%] right-6 hover:scale-[1.2] transition-all duration-500 hover:cursor-pointer"
+              onClick={() => {
+                onEye();
+              }}
+            >
+              {eye ? <FaEye /> : <FaEyeSlash />}
+            </div>
             <div className="absolute bg-white px-1 text-[13px] max-sm:text-[10px] max-sm:mt-[-8px] font-semibold ml-[15px] mt-[-10px] text-gray-500">
               Enter Password:
             </div>
             <div className="min-w-[290px] h-[40px] border flex justify-center items-center rounded-full overflow-hidden">
               <input
-                type="password"
+                type={`${eye ? "password" : "text"}`}
                 placeholder="JohnDoe123"
                 className="w-full h-full outline-none  pl-5 placeholder:text-[13px] text-[13px]"
                 {...register("password")}

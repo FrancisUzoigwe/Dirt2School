@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-scroll/modules";
 import { NavLink } from "react-router-dom";
 import Menue from "./Menue";
+import { LiaSchoolSolid } from "react-icons/lia";
 
 const Header = () => {
   const [show, setShow] = useState<boolean>(false);
@@ -22,7 +23,9 @@ const Header = () => {
         <div className="w-full h-[70px] fixed flex items-center transition-all duration-300 justify-center z-20  text-black bg-white">
           <div className="w-[90%] h-[100%] flex items-center justify-center z-20 ">
             <div className="flex w-[100%] h-[100%] justify-between items-center">
-              <div className="">Waste</div>
+              <div className="w-[50px] h-[50px] max-sm:w-[40px] max-sm:h-[40px]  rounded-full border flex items-center justify-center border-green-500 ">
+                <LiaSchoolSolid className="text-4xl text-green-500 max-sm:text[2xl" />
+              </div>
 
               <div className="flex gap-10 max-md:gap-7 md:text-[14px] sm:text-[14px] text-[16px] max-sm:hidden">
                 <Link
@@ -115,7 +118,9 @@ const Header = () => {
         <div className="w-full h-[70px] fixed flex items-center transition-all duration-300 justify-center z-20 text-white">
           <div className="w-[90%] h-[100%] flex items-center justify-center z-20 ">
             <div className="flex w-[100%] h-[100%] justify-between items-center">
-              <div className="">Waste</div>
+              <div className="w-[50px] h-[50px] rounded-full border flex items-center justify-center">
+                <LiaSchoolSolid className="text-4xl" />
+              </div>
 
               <div className="flex gap-10 max-md:gap-7 md:text-[14px] sm:text-[14px] text-[16px] max-sm:hidden">
                 <Link

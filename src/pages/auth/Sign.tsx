@@ -6,13 +6,15 @@ import { useParams } from "react-router-dom";
 import LoadingScreen from "./LoadingScreen";
 import { signinApi, verifiedApi } from "../../apis/authApi";
 import { useNavigate } from "react-router-dom";
-import { jwtDecode } from "jwt-decode";
+// import { jwtDecode } from "jwt-decode";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
 import { mainUser } from "../../global/globalState";
 const Sign = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { token }: any = useParams();
+  // const { token }: any = useParams();
   const [checked, setChecked] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -49,6 +51,11 @@ const Sign = () => {
   //     verifiedApi(token);
   //   }
   // }, []);
+
+  const [eye, setEye] = useState<boolean>(false);
+  const onEye = () => {
+    setEye(!eye);
+  };
   return (
     <>
       <div>
@@ -74,12 +81,20 @@ const Sign = () => {
             )}
           </div>
           <div className="mt-[25px] relative rounded-md ">
+            <div
+              className="absolute top-[30%] right-6 hover:scale-[1.2] transition-all duration-500 hover:cursor-pointer"
+              onClick={() => {
+                onEye();
+              }}
+            >
+              {eye ? <FaEye /> : <FaEyeSlash />}
+            </div>
             <div className="absolute bg-white px-1 text-[13px] max-sm:text-[10px] max-sm:mt-[-8px] font-semibold ml-[15px] mt-[-10px] text-gray-500">
               Enter Password:
             </div>
             <div className="min-w-[290px] h-[40px] border flex justify-center items-center rounded-full overflow-hidden">
               <input
-                type="password"
+                type={`${eye ? "password" : "text"}`}
                 placeholder="JohnDoe123"
                 className="w-full h-full outline-none  pl-5 placeholder:text-[13px] text-[13px]"
                 {...register("password")}
