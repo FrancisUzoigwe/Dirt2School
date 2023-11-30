@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import LoadingScreen from "./LoadingScreen";
 import { signinApi, verifiedApi } from "../../apis/authApi";
 import { useNavigate } from "react-router-dom";
-// import { jwtDecode } from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
@@ -14,7 +14,7 @@ import { mainUser } from "../../global/globalState";
 const Sign = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  // const { token }: any = useParams();
+  const { token }: any = useParams();
   const [checked, setChecked] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -38,19 +38,19 @@ const Sign = () => {
     signinApi({ email, password }).then((res) => {
       if (res) {
         navigate("/");
-        // const decode: any = jwtDecode(res);
+        const decode: any = jwtDecode(res);
         dispatch(mainUser(res));
-        // console.log("This is : ", decode.id);
+        console.log("This is : ", typeof decode.id);
         setLoading(false);
       }
     });
   });
 
-  // useEffect(() => {
-  //   if (token) {
-  //     verifiedApi(token);
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (token) {
+      verifiedApi(token);
+    }
+  }, []);
 
   const [eye, setEye] = useState<boolean>(false);
   const onEye = () => {

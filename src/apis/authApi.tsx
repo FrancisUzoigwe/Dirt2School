@@ -1,13 +1,13 @@
 import axios from "axios";
 
-const URL: string = "http://localhost:3400/api";
+const URL: string = "http://localhost:3783/api";
 
 export const registerUser = async (data: any) => {
   try {
     // const config: any = {
     //   "content-type": "multipart/formdata",
     // };
-    return await axios.post(`${URL}/register`, data).then((res) => {
+    return await axios.post(`${URL}/register-student`, data).then((res) => {
       return res.data?.data;
     });
   } catch (error) {
@@ -17,7 +17,7 @@ export const registerUser = async (data: any) => {
 
 export const signinApi = async (data: any) => {
   try {
-    return await axios.post(`${URL}/signin`, data).then((res) => {
+    return await axios.post(`${URL}/sign-in-student`, data).then((res) => {
       return res.data?.data;
     });
   } catch (error) {
