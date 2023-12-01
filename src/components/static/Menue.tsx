@@ -65,7 +65,7 @@ export default function App() {
         }}
         style={{ pointerEvents: isOpen ? "auto" : "none" }}
       >
-        <a href="/signin">
+        <a href="/auth/signin">
           <motion.li
             variants={itemVariants}
             className="py-2 px-1 hover:bg-white cursor-pointer justify-center flex items-center rounded-sm"
@@ -74,7 +74,7 @@ export default function App() {
           </motion.li>
         </a>
 
-        <a href="/register">
+        <a href="/auth/register">
           <motion.li
             variants={itemVariants}
             className="py-2 px-1 justify-center flex items-center hover:bg-white cursor-pointer rounded-sm"

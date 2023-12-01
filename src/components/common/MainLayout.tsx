@@ -11,7 +11,8 @@ const MainLayout = () => {
         <div className="w-[80px] max-sm:hidden mr-2 ">
           <Sider />
         </div>
-        <div className="w-full h-auto 0">
+        <div className="w-full h-auto 
+        ">
           <Outlet />
         </div>
       </div>

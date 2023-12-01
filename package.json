@@ -13,6 +13,7 @@
     "@formkit/auto-animate": "^0.8.1",
     "@hookform/resolvers": "^3.3.2",
     "@reduxjs/toolkit": "^1.9.7",
+    "@tanstack/react-query": "^5.10.0",
     "@types/react-scroll": "^1.8.10",
     "@types/react-slick": "^0.23.12",
     "@types/slick-carousel": "^1.6.40",
