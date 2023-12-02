@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
 import { logOut } from "../../global/globalState";
+import { Link } from "react-router-dom";
 
 const DropDown = () => {
   const dispatch = useDispatch();
@@ -34,29 +35,39 @@ const DropDown = () => {
   };
   return (
     <>
-      <motion.div
-        className="w-[150px] h-[70px] rounded-md bg-black flex-col flex items-center"
-        variants={mainVariant}
-        initial="hidden"
-        animate="visible"
-      >
+      <div className="relative">
         <motion.div
-          className="flex items-center flex-col"
-          variants={typeVariant}
+          className="w-[150px] h-auto rounded-md bg-green-500 flex-col flex items-center"
+          variants={mainVariant}
+          initial="hidden"
+          animate="visible"
         >
-          <div className="text-white mt-2 hover:cursor-pointer hover:scale-110 transition-all duration-500">
-            Update Profile
-          </div>
-          <div
-            className="text-white mt-1 hover:cursor-pointer hover:scale-110 transition-all duration-500"
-            onClick={() => {
-              dispatch(logOut());
-            }}
+          <motion.div
+            className="flex items-center flex-col"
+            variants={typeVariant}
           >
-            Logout
-          </div>
+            <Link to="/">
+              <div className="text-white mt-2 hover:cursor-pointer hover:scale-110 transition-all duration-500">
+                Cash
+              </div>
+            </Link>
+            <Link to="/profile">
+              <div className="text-white mt-2 hover:cursor-pointer hover:scale-110 transition-all duration-500">
+                Update Profile
+              </div>
+            </Link>
+
+            <div
+              className="text-white my-2 hover:cursor-pointer hover:scale-110 transition-all duration-500 "
+              onClick={() => {
+                dispatch(logOut());
+              }}
+            >
+              Logout
+            </div>
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
     </>
   );
 };

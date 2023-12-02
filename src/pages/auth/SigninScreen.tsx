@@ -3,10 +3,9 @@ import dirt from "../../assets/Children.webp";
 import Sign from "./Sign";
 
 const SigninScreen = () => {
-
   return (
     <div className="w-full h-[100vh] flex items-center justify-center bg-gray-100  ">
-      <div className="w-[93%] h-[93%]  rounded-xl shadow-3xl flex overflow-hidden max-lg:justify-center">
+      <div className="w-full h-full   shadow-3xl flex overflow-hidden max-lg:justify-center">
         <div className="w-[65%] bg-green-500 flex rounded-3xl flex-col items-center max-lg:hidden">
           <div className="w-full h-full rounded-3xl ">
             <img src={dirt} className="h-full w-full object-cover" />
@@ -20,7 +19,7 @@ const SigninScreen = () => {
                   <Link to="/auth/signin">
                     <button
                       className="  bg-green-400 text-white
-                     py-2 px-5 ml-2 rounded-sm  font-semibold transition-all rounded-tl-[20px] rounded-br-[20px]  duration-500"
+                     py-2 px-5 ml-2 rounded-md  font-semibold transition-all duration-500"
                     >
                       Login
                     </button>
@@ -30,7 +29,7 @@ const SigninScreen = () => {
                       className="
                    
                         bg-green-400 text-white
-                     py-2 px-5 ml-2 rounded-sm  font-semibold transition-all rounded-tl-[20px] rounded-br-[20px] duration-500 "
+                     py-2 px-5 ml-2 rounded-md  font-semibold transition-all  duration-500 "
                     >
                       Register
                     </button>

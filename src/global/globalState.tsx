@@ -5,6 +5,7 @@ const initialState = {
   toggle: false,
   studentToggle: false,
   admin: {} || null,
+  detail: false,
 };
 
 const globalState = createSlice({
@@ -35,6 +36,12 @@ const globalState = createSlice({
     logOutAdmin: (state: any) => {
       state.admin = null;
     },
+    detailed: (state: any) => {
+      state.detail = true;
+    },
+    changedDetail: (state: any) => {
+      state.detail = false;
+    },
   },
 });
 
@@ -47,6 +54,8 @@ export const {
   logOutAdmin,
   changedStudentToggle,
   studentTogge,
+  detailed,
+  changedDetail,
 } = globalState.actions;
 
 export default globalState.reducer;

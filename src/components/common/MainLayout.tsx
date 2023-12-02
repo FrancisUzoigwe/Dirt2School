@@ -5,14 +5,16 @@ import Sider from "../static/Sider";
 
 const MainLayout = () => {
   return (
-    <div className="w-full h-auto flex-col">
+    <div className="w-full h-auto flex-col ">
       <MainHeader />
       <div className="flex w-full h-auto">
         <div className="w-[80px] max-sm:hidden mr-2 ">
           <Sider />
         </div>
-        <div className="w-full h-auto 
-        ">
+        <div
+          className="w-full h-auto 
+        "
+        >
           <Outlet />
         </div>
       </div>

@@ -4,7 +4,15 @@
 
 @font-face {
   font-family: Poppin;
-  src: url(/fonts/Poppins-Regular.ttf);
+  src: url(/public/fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: Evergreen;
+  src: url(/public/fonts/Evergreen.otf);
+}
+.Evergreen {
+  font-family: Evergreen;
 }
 
 .Poppin {
@@ -16,7 +24,7 @@
 }
 
 :root {
-  font-family: Poppin;
+  font-family: Poppin, Evergreen;
   line-height: 1.5;
   font-weight: 400;
 }

@@ -30,7 +30,6 @@ const Reg = () => {
 
   const Schema = yup.object({
     email: yup.string().required(),
-    // name: yup.string().required(),
     password: yup.string().required(),
   });
 
@@ -59,39 +58,9 @@ const Reg = () => {
       <div>
         {loading && <LoadingScreen />}
         <form onSubmit={onHandleSubmit}>
-          <div className="flex flex-col items-center w-full h-auto">
-            {/* <div className="w-[100px] h-auto flex items-center flex-col relative">
-              <img
-                src={image? image: avatar}
-                alt="Profile"
-                className="w-[90px] h-[90px] rounded-full border object-cover "
-              />
-              <input type="file" id="upload" hidden onChange={onHandleImage} />
-              <label htmlFor="upload">
-                <div className="absolute bottom-1 right-1">
-                  <FaCamera className="text-2xl hover:cursor-pointer hover:text-gray-700 transition-all duration-300" />
-                </div>
-              </label>
-            </div> */}
+          <div className="flex flex-col items-center w-full h-auto font-bold uppercase">
+            Register
           </div>
-          {/* <div className="mt-[15px] relative rounded-md">
-            <div className="absolute bg-white px-2 text-[13px] max-sm:text-[10px] max-sm:mt-[-8px] font-semibold ml-[15px] mt-[-10px] text-gray-500">
-              Enter Name:
-            </div>
-            <div className="min-w-[290px] h-[40px] border flex justify-center items-center rounded-full overflow-hidden">
-              <input
-                type="text"
-                placeholder="JohnDoe"
-                className="w-full h-full outline-none  pl-5 placeholder:text-[13px] text-[13px]"
-                {...register("name")}
-              />
-            </div>
-            {errors.name?.message && (
-              <div className="text-[11px] text-red-500 flex justify-end items-center mt-[-4px] font-semibold">
-                Please provide a name
-              </div>
-            )}
-          </div> */}
           <div className="mt-[25px] relative rounded-md">
             <div className="absolute bg-white px-1 text-[13px] max-sm:text-[10px] max-sm:mt-[-8px] font-semibold ml-[15px] mt-[-10px] text-gray-500">
               Enter Email:
@@ -149,7 +118,7 @@ const Reg = () => {
             <button
               className={`px-5 py-2 text-white text-[14px] transition-all duration-500 ${
                 checked ? "bg-green-400" : "bg-gray-400"
-              } rounded-sm rounded-tl-[20px] rounded-br-[20px]  font-semibold `}
+              } rounded-md   font-semibold `}
               type="submit"
               disabled={!checked}
             >
